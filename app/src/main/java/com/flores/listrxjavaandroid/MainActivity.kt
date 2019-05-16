@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         val list = listOf("Alpha", "Beta", "Gamma", "Delta", "Epsilon")
 
         var results = ""
+
         list.toObservable().filter { it.length > 5 }.subscribeBy(  // named arguments for lambda Subscribers
             onNext = { results = "next" },
             onError = { results = "error" },
