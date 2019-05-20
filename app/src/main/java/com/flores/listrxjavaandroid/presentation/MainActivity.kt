@@ -1,8 +1,9 @@
-package com.flores.listrxjavaandroid
+package com.flores.listrxjavaandroid.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.flores.listrxjavaandroid.R
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.rxkotlin.subscribeBy
