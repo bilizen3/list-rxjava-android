@@ -4,6 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Retrofit2ApiManager {
+
     private var retrofit2Api: Retrofit2Api? = null
 
     fun processApi(): Retrofit2Api? {

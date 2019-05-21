@@ -1,9 +1,13 @@
 package com.flores.listrxjavaandroid.data.repository
 
-import com.flores.listrxjavaandroid.data.model.Employee
+import com.flores.listrxjavaandroid.data.datasource.EmployeeDataSource
+import com.flores.listrxjavaandroid.domain.model.Employee
+import io.reactivex.Single
 
-class EmployeeRepositoryImpl : EmployeeRepository {
-    override fun getEmployee(): List<Employee> {
-        return null
+class EmployeeRepositoryImpl(private val employeeDataSource: EmployeeDataSource) : EmployeeRepository {
+
+    override fun getEmployee(): Single<List<Employee>> {
+        return employeeDataSource.getEmployees()
     }
+
 }
