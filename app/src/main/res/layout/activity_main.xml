@@ -4,11 +4,17 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.MainActivity">
+        android:orientation="vertical"
+        tools:context=".presentation.ui.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnShow"
             android:text="show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
