@@ -51,12 +51,11 @@ class MainActivity : AppCompatActivity(), MainView {
             }
             Status.LOADING -> {
                 progressDialog.show()
-
             }
             Status.ERROR -> {
                 tvComment.text = response.message
             }
         }
-
     }
+
 }
