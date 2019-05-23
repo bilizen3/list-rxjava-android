@@ -1,7 +1,7 @@
 package com.flores.listrxjavaandroid.data.mapper
 
-import com.flores.listrxjavaandroid.data.model.EmployeeResponse
-import com.flores.listrxjavaandroid.domain.model.Employee
+import com.flores.listrxjavaandroid.data.entity.response.EmployeeResponse
+import com.flores.listrxjavaandroid.domain.entity.Employee
 
 object EmployeeMapper {
 

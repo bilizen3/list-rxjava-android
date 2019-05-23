@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.flores.listrxjavaandroid.R
 import com.flores.listrxjavaandroid.data.api.Retrofit2ApiManager
-import com.flores.listrxjavaandroid.data.datasource.EmployeeDataSourceImpl
+import com.flores.listrxjavaandroid.data.datasource.remote.EmployeeDataSourceImpl
 import com.flores.listrxjavaandroid.data.repository.EmployeeRepositoryImpl
-import com.flores.listrxjavaandroid.domain.model.Employee
 import com.flores.listrxjavaandroid.domain.usecase.EmployeeUseCase
 import com.flores.listrxjavaandroid.presentation.presenter.MainPresenter
 import com.flores.listrxjavaandroid.presentation.presenter.MainPresenterImpl
@@ -31,12 +30,12 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val employeeDataSourceImpl = EmployeeDataSourceImpl(Retrofit2ApiManager)
+        val employeeDataSourceImpl =
+            EmployeeDataSourceImpl(Retrofit2ApiManager)
         val employeeRepositoryImpl = EmployeeRepositoryImpl(employeeDataSourceImpl)
         val employeeUseCase = EmployeeUseCase(employeeRepositoryImpl)
 
         mainPresenter = MainPresenterImpl(this, employeeUseCase)
-
 
         btnShow.setOnClickListener {
             mainPresenter.getListEmployees()

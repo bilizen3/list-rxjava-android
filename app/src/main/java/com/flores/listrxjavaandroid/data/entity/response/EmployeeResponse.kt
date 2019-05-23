@@ -1,4 +1,4 @@
-package com.flores.listrxjavaandroid.data.model
+package com.flores.listrxjavaandroid.data.entity.response
 
 data class EmployeeResponse(
     private val id: String,
