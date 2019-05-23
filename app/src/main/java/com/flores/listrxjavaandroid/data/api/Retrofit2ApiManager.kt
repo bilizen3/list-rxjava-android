@@ -1,6 +1,10 @@
 package com.flores.listrxjavaandroid.data.api
 
+import com.flores.listrxjavaandroid.BuildConfig
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Retrofit2ApiManager {
@@ -9,8 +13,20 @@ object Retrofit2ApiManager {
 
     fun processApi(): Retrofit2Api? {
         if (retrofit2Api == null) {
-            val retrofit = Retrofit.Builder().baseUrl("http://dummy.restapiexample.com/api/v1/")
+
+            val interceptor = HttpLoggingInterceptor()
+
+            interceptor.level = if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+            else HttpLoggingInterceptor.Level.BODY
+
+            val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
+
+            val retrofit = Retrofit.Builder()
+                .baseUrl("http://dummy.restapiexample.com/api/v1/")
+                .client(client)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create()).build()
+
             retrofit2Api = retrofit.create(Retrofit2Api::class.java)
         }
         return retrofit2Api

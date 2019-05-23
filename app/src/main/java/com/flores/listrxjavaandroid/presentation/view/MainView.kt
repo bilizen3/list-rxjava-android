@@ -1,6 +1,9 @@
 package com.flores.listrxjavaandroid.presentation.view
 
+import com.flores.listrxjavaandroid.util.Resource
+
 interface MainView {
 
-    fun showListEmployees()
+    fun responseShowListEmployees(response: Resource<String?>)
+
 }
