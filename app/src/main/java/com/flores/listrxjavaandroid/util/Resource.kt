@@ -5,7 +5,7 @@ class Resource<T> private constructor(
     val data: T?,
     val message: String?
 ) {
-    companion object{
+    companion object {
         fun <T> success(data: T?): Resource<T> {
             return Resource(Status.SUCCESS, data, null)
         }
