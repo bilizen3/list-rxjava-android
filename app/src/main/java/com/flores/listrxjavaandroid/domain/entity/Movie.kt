@@ -6,4 +6,10 @@ class Movie(
     private val title: String = "",
     private val releaseDate: String = "",
     private val adult: Boolean = false
-)
+) {
+
+    fun getMovie(): String {
+        return title
+    }
+
+}

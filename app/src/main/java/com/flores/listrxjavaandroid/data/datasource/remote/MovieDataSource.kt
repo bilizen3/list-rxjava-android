@@ -5,6 +5,6 @@ import io.reactivex.Single
 
 interface MovieDataSource {
 
-    fun getListMovies(page: Int, apiKey: String): Single<MovieResult>
+    fun getListMovies(page: Int): Single<MovieResult>
 
 }

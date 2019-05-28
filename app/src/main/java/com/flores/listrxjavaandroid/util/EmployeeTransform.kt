@@ -6,8 +6,8 @@ object EmployeeTransform {
 
     fun transformStringListEmployee(movies: List<Movie>): String {
         var text = ""
-        for (employee in movies) {
-            text += employee.getName() + "\n"
+        for (movie in movies) {
+            text += movie.getMovie() + "\n"
         }
         return text
     }

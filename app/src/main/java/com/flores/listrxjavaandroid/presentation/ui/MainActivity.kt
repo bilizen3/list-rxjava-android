@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), MainView {
         mainPresenter = MainPresenterImpl(this, employeeUseCase)
 
         btnShow.setOnClickListener {
-            mainPresenter.getListEmployees()
+            mainPresenter.getListEmployees(1)
         }
 
     }
@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity(), MainView {
                 progressDialog.show()
             }
             Status.ERROR -> {
+                progressDialog.hide()
                 tvComment.text = response.message
             }
         }

@@ -18,6 +18,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "TOKEN_SERVICE", "\"73600704c1c70585df13771486247174\""
+
+        }
+        debug{
+            buildConfigField "String", "TOKEN_SERVICE", "\"73600704c1c70585df13771486247174\""
         }
     }
 }

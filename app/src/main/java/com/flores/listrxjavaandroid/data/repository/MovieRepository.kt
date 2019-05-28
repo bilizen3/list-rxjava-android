@@ -1,8 +1,10 @@
 package com.flores.listrxjavaandroid.data.repository
 
-import com.flores.listrxjavaandroid.domain.entity.Movie
+import com.flores.listrxjavaandroid.domain.entity.MovieResult
 import io.reactivex.Single
 
 interface MovieRepository {
-    fun getEmployee(): Single<List<Movie>>
+
+    fun getEmployee(page: Int): Single<MovieResult>
+
 }
