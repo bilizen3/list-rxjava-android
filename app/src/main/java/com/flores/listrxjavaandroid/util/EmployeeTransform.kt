@@ -1,12 +1,12 @@
 package com.flores.listrxjavaandroid.util
 
-import com.flores.listrxjavaandroid.domain.entity.Employee
+import com.flores.listrxjavaandroid.domain.entity.Movie
 
 object EmployeeTransform {
 
-    fun transformStringListEmployee(employees: List<Employee>): String {
+    fun transformStringListEmployee(movies: List<Movie>): String {
         var text = ""
-        for (employee in employees) {
+        for (employee in movies) {
             text += employee.getName() + "\n"
         }
         return text

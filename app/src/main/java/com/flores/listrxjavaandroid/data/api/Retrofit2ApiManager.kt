@@ -22,7 +22,7 @@ object Retrofit2ApiManager {
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://dummy.restapiexample.com/api/v1/")
+                .baseUrl("https://api.themoviedb.org/3/discover/")
                 .client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create()).build()

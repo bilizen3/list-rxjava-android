@@ -1,12 +1,12 @@
 package com.flores.listrxjavaandroid.domain.usecase
 
-import com.flores.listrxjavaandroid.data.repository.EmployeeRepository
-import com.flores.listrxjavaandroid.domain.entity.Employee
+import com.flores.listrxjavaandroid.data.repository.MovieRepository
+import com.flores.listrxjavaandroid.domain.entity.Movie
 import io.reactivex.Single
 
-class EmployeeUseCase(private val employeeRepository: EmployeeRepository) {
+class EmployeeUseCase(private val employeeRepository: MovieRepository) {
 
-    fun getEmployees(): Single<List<Employee>> {
+    fun getEmployees(): Single<List<Movie>> {
         return employeeRepository.getEmployee()
     }
 
