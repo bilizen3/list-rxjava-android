@@ -18,6 +18,10 @@ class MovieResult(
         this.totalPages = totalPages
     }
 
+    fun getTotalPages(): Int {
+        return totalPages
+    }
+
     fun setResults(results: List<Movie>) {
         this.results = results
     }
