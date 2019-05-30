@@ -5,6 +5,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/billflores/Desktop/keystoreRxjava.keystore')
+            storePassword 'flores'
+            keyAlias = 'keystoreRxjava'
+            keyPassword 'flores'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.flores.listrxjavaandroid"
@@ -19,6 +27,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "TOKEN_SERVICE", "\"73600704c1c70585df13771486247174\""
+            signingConfig signingConfigs.release
 
         }
         debug{
